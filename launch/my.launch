@@ -1,0 +1,52 @@
+<launch>
+    <!-- <group ns="tag"> -->
+    <!-- <arg name="uwb_port" default="/dev/ttyACM0"/>
+    <arg name="tag_name" default="192A"/>
+    <arg name="winSize" default="5"/>
+    <arg name="winMethod" default="mean"/> -->
+
+
+<!-- 
+        <arg name="uwb_serial_topic_name" default="/uwb/serial"/>
+        <arg name="uwb_coords_topic_name" default="/uwb/position"/> -->
+        
+        <!-- <node pkg="uwb" type="uwb_usb_interface.py" name="uwbSerialInterface" output="screen">
+            <param name="pub_topic_name" value="$(arg uwb_serial_topic_name)"/>
+            <param name="port_id" value="$(arg uwb_port)"/>
+        </node> -->
+
+    <node pkg="relay_nodes" exec="pub" name="relayNode1" output="screen">
+        <param name="sub_topic" value="/pos1/rpi"/>
+        <param name="pub_topic" value="/pos1/dds"/>
+    </node>
+
+    <node pkg="relay_nodes" exec="pub" name="relayNode2" output="screen">
+        <param name="sub_topic" value="/pos2/rpi"/>
+        <param name="pub_topic" value="/pos2/dds"/>
+    </node>
+<!-- 
+    <node pkg="relay_nodes" exec="pub" name="relayNode1" output="screen">
+        <param name="sub_topic" value="/pos1/rpi"/>
+        <param name="pub_topic" value="/pos1/dds"/>
+    </node>
+
+    <node pkg="relay_nodes" exec="pub" name="relayNode1" output="screen">
+        <param name="sub_topic" value="/pos1/rpi"/>
+        <param name="pub_topic" value="/pos1/dds"/>
+    </node> -->
+
+    <!-- <node pkg="relay_nodes" exec="param_talker" name="relayNode1" output="screen">
+        <param name="sub_topic" value="/pos1/rpi"/>
+        <param name="pub_topic" value="/pos1/dds"/>
+    </node>
+         -->
+        <!-- <node pkg="uwb" type="uwb_processing.py" name="uwbMovingAverage" output="screen">
+            <param name="sub_topic_name" value="$(arg uwb_coords_topic_name)"/>
+            <param name="pub_topic_name" value="/uwb/position/movingAverage"/>
+            <param name="window_size" value="$(arg winSize)"/>
+            <param name="window_method" value="$(arg winMethod)"/>
+        </node> -->
+    <!-- </group> -->
+
+    <!-- <include file="$(find uwb)/launch/anchorPositions.launch" /> -->
+</launch>
