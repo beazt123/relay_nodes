@@ -6,45 +6,45 @@ def generate_launch_description():
         Node(
             package="relay_nodes",
             node_executable="pub",
-            node_name="relay_node1",
+            node_name="relay_node11",
             output="screen",
             # emulate_tty=True,
             parameters=[
-                {"sub_topic": "/pos1/rpi",
-                "pub_topic": "/pos1/dds"}
+                {"sub_topic": "/pos1/dds",
+                "pub_topic": "/pos1/rover"}
             ]
         ),
         Node(
             package="relay_nodes",
             node_executable="pub",
-            node_name="relay_node2",
+            node_name="relay_node22",
             output="screen",
             # emulate_tty=True,
             parameters=[
-                {"sub_topic": "/pos2/rpi",
-                "pub_topic": "/pos2/dds"}
+                {"sub_topic": "/pos2/dds",
+                "pub_topic": "/pos2/rover"}
             ]
         ),
          Node(
             package="relay_nodes",
             node_executable="pub",
-            node_name="relay_node3",
+            node_name="relay_node33",
             output="screen",
             # emulate_tty=True,
             parameters=[
-                {"sub_topic": "/pos3/rpi",
-                "pub_topic": "/pos3/dds"}
+                {"sub_topic": "/pos3/dds",
+                "pub_topic": "/pos3/rover"}
             ]
         ),
         Node(
             package="relay_nodes",
             node_executable="pub",
-            node_name="relay_node4",
+            node_name="relay_node44",
             output="screen",
             # emulate_tty=True,
             parameters=[
-                {"sub_topic": "/pos4/rpi",
-                "pub_topic": "/pos4/dds"}
+                {"sub_topic": "/pos4/dds",
+                "pub_topic": "/pos4/rover"}
             ]
         ),
     ])
